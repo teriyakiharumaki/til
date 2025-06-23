@@ -49,5 +49,9 @@ https://www.python.jp/pages/about.html
 https://tech-stock.com/magazine/what-is-django/
 
 # gitに草が生えない場合の参考資料
+
 https://qiita.com/gintaro0111/items/f0280fcbe0a5a7bc04c6
+
 https://zenn.dev/soma_takata/articles/9a4edc9fe7cbe2
+
+https://qiita.com/Hbk__17/items/9aa18bae9b5ce302df95
