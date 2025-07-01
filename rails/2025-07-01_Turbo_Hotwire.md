@@ -52,6 +52,12 @@ Turboは、HotwireというRails標準のフロントエンドフレームワー
 従来のJavaScriptフレームワークのように複雑な設定や構成を必要とせず、Railsの規約に沿ってコードを書くことで、バックエンドとフロントエンドをシームレスに連携できます。<br>
 JavaScriptを最小限に抑えながら、ユーザーにとってスムーズで高速な操作感を実現できるのが魅力です。
 
+## つまり、Hotwireとは
+
+Hotwireは、Rails 7から標準で導入された仕組みで、JavaScriptをあまり書かずに、SPAのような体験を実現できるのが特徴です。<br>
+「HTML Over The Wire」という考え方で、サーバーで生成したHTMLをそのままブラウザに送り、ページの一部だけを更新することで、リロードなしのスムーズな画面遷移ができます。<br>
+主にTurboとStimulus、Stradaという3つのコンポーネントで構成されていますが、特によく使われるのはTurboで、JavaScriptなしで非同期通信や部分更新ができるようになります。
+
 ## 参考サイト
 [1](https://qiita.com/Ninomin/items/d0f7e0c2c80b49a7596c)<br>
 [2](https://zenn.dev/shita1112/books/cat-hotwire-turbo/viewer/abstract)<br>
