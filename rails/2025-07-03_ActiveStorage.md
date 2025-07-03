@@ -19,8 +19,6 @@ ActiveStorageは、Railsでファイルのアップロードや管理を行う�
 ## 参考サイト
 [1](https://railsguides.jp/active_storage_overview.html)<br>
 [2](https://zenn.dev/sudoukky/articles/a73a651c762230)<br>
-[3]()<br>
-[4]()<br>
 
 仕組み、使い方
 https://qiita.com/nagumo01/items/76b97a98e83604150496
