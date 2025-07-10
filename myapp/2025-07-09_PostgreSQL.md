@@ -61,8 +61,6 @@ Oracle Databaseの特徴は、機能性の高さです。<br>
 データベースを操作するための独自関数など、他のRDBMSにはない機能が備わっています。<br>
 長年にわたりデータベース製品の中で世界シェア1位（2023年10月現在）を獲得している信頼性の高さもOracle Databaseの特徴です。[2]
 
-
-
 ## 参考サイト
 [1](https://tech-reach.jp/column/3461/)<br>
 [2](https://udemy.benesse.co.jp/development/postgresql.html)
