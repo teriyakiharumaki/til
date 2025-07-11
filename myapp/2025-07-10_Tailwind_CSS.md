@@ -7,7 +7,7 @@
 ## Tailwind CSSとは
 
 - Tailwind CSSはutility classを活用したCSS フレームワークです。CSSフレームワークにはBootstrapやMaterial UI などが挙げられますが、これらのフレームワークでは事前に準備されているボタンやカードなどのコンポーネントを活用します。<br>
-Tailwind CSSでは事前に準備されたコンポーネントなどはなく、utility classを使って独自にデザインを行ってコンポーネントを構築します。[1]
+Tailwind CSSでは事前に準備されたコンポーネントなどはなく、utility classを使って独自にデザインを行ってコンポーネントを構築します。
 
 ## メリット
 
