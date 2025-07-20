@@ -121,7 +121,7 @@ Password (again): a~
 Superuser created successfully.
 ```
 
-##　開発用サーバーの起動
+## 開発用サーバーの起動
 次のサーバーで起動
 ```
 python manage.py runserver
