@@ -4,7 +4,7 @@
 
 - Strong Parametersについて調べた
 
-## Strong Parameterとは[1]
+## Strong Parametersとは[1]
 Rails には、 **ストロングパラメーター（Strong Parameter）** という、ユーザーから送信されるデータを制限する機能があります。
 この仕組みを使うことで、安全では無いデータの登録・更新を防いでくれます。
 
@@ -101,5 +101,5 @@ https://pikawaka.com/rails/strong_parameter#データ書き換えの危険性を
 検証からパラメータを書き換えることで好きなカラムを編集することが可能になってしまう
 
 ## 参考サイト
-[1](https://qiita.com/Hashimoto-Noriaki/items/736b734b250f059dd34f)
+[1](https://qiita.com/Hashimoto-Noriaki/items/736b734b250f059dd34f)<br>
 [2](https://pikawaka.com/rails/strong_parameter)
