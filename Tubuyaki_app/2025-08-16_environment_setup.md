@@ -227,14 +227,17 @@ development:
 
 ### 2025/12/3追記
 ```
-test:
-  <<: *default
-  database: tubuyaki_development
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  max_connections: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: db
   username: postgres
-  password: passward
+  password: password
 ```
-testにもusernameとpasswardを追記しないと同様のエラーが出る
+testにもusernameとpasswardを追記しないと同様のエラーが出るので、defaultに記述するべき（developmentとtestからは削除）
 
 ### さらなるエラー
 サーバーは起動しているように見えるが、「localhost からデータが送信されませんでした。」と表示されサイトが表示されない
