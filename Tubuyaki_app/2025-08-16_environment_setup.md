@@ -106,7 +106,7 @@ volumes: # ボリュームの定義
 ```
 docker compose build
 docker compose run --rm web gem install rails
-docker compose run --rm web rails new . -d postgresql -j esbuild --css=bootstrap 
+docker compose run --rm web rails new . -d postgresql -j esbuild --css=bootstrap
 ```
 
 ### エラー発生！
@@ -224,6 +224,17 @@ development:
   username: postgres
   password: passward # ←ここを追加！
 ```
+
+### 2025/12/3追記
+```
+test:
+  <<: *default
+  database: tubuyaki_development
+  host: db
+  username: postgres
+  password: passward
+```
+testにもusernameとpasswardを追記しないと同様のエラーが出る
 
 ### さらなるエラー
 サーバーは起動しているように見えるが、「localhost からデータが送信されませんでした。」と表示されサイトが表示されない
