@@ -4,15 +4,18 @@
 
 - 環境構築を行なった
 
+## 参考にしたサイト
+https://www.kagoya.jp/howto/cloud/container/docker_laravel/
+
 ## 環境構築の流れ
 
-### ディレクトリを作成し、移動
+## 1. ディレクトリを作成し、移動
 ```
 mkdir game_log
 cd game_log
 ```
 
-### compose.ymlを作成
+## 2. compose.ymlを作成
 game_log/compose.yml
 ```
 services:
