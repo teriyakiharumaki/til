@@ -75,7 +75,7 @@
 
 このコマンドでpush
 ```
-git push -u origin main'
+git push -u origin main
 ```
 ❗️エラー❗️
 ```
@@ -86,7 +86,7 @@ error: failed to push some refs to 'github.com:teriyakiharumaki/tubuyaki.git
 つまり、コミットを作っていつも通りpushすれば良い
 ```
 git add .
-git commit -m ""
+git commit -m "最初のコミット"
 git push -u origin main
 ```
 これでOK！
