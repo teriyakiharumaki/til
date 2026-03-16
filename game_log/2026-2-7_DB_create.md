@@ -319,3 +319,34 @@ Deprecated: PHP Startup: Use of mbstring.internal_encoding is deprecated in Unkn
   2019_12_14_000001_create_personal_access_tokens_table ................................................... 22ms DONE
   2026_02_06_165045_create_games_table ..................................................................... 8ms DONE
 ```
+
+## Modelにfillableを追加（追記：2026/03/17）
+
+app/Models/Game.php に fillable を追加
+```
+class Game extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [                   #ここから追加
+        'title',
+        'platform',
+        'rating',
+        'review',
+        'price',
+        'condition',
+        'status',
+        'play_time_minutes',
+        'purchased_at',
+        'cleared_at',
+    ];
+}
+```
+
+fillable は
+
+**このカラムだけまとめて保存していいよ**
+
+というリスト
+
+参考サイト（https://qiita.com/monji586/items/58d91891caa51b514166）
