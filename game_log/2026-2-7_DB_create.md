@@ -19,6 +19,70 @@ Deprecated: PHP Startup: Use of mbstring.internal_encoding is deprecated in Unkn
 game_log/app/Models/Game.phpと、game_log/database/migrations/2026_02_06_165045_create_games_table.php
 が作成された
 
+## マイグレーションを作成するコードについて
+```
+php artisan make:model Game -m
+```
+### ① php
+
+PHPを実行するコマンド
+
+LaravelはPHPで動いているので、artisan も PHP で実行する
+
+### ② artisan
+
+Laravel専用のコマンドラインツール
+
+Railsでいうと bin/rails に近い存在
+
+- モデル作成
+- コントローラ作成
+- マイグレーション実行
+- キャッシュ削除
+
+などを行える
+
+参考サイト（https://webukatu.com/wordpress/blog/11938/）
+
+### ③ make:model
+
+モデルを作るための Artisan コマンド
+
+今回は Game というモデルを作成した
+
+モデルは、DBのテーブルとやり取りするためのクラス。
+
+つまり Game モデルは、
+games テーブルのデータを扱うためのものになる。
+
+### ④ Game
+
+作りたいモデル名
+
+Laravelでは単数形・先頭大文字で書く
+
+このときLaravelが自動で：
+
+モデル名：Game
+
+テーブル名：games
+
+と対応づけてくれる
+
+### ⑤ -m
+
+migration の略
+
+モデル作成と一緒に、マイグレーションファイルも作るオプション
+
+これを付けることで、次の2つが同時にできる。
+
+作成されたもの
+
+- app/Models/Game.php
+- database/migrations/xxxx_xx_xx_xxxxxx_create_games_table.php
+
+
 ## DBのカラム一覧
 - title（ゲーム名）
 
