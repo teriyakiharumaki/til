@@ -124,6 +124,13 @@ $errors->any()
 
 これがないと、419エラーになる
 
+csrfについて（https://www.ipa.go.jp/security/vuln/websecurity/csrf.html）
+
+CSRF（Cross Site Request Forgery）<br>
+サイトを跨いだなりすまし攻撃
+
+「このフォームは本当にこのサイトから送られたか？」を確認することにより、対策してるシステム
+
 ### ⑦ input（ゲーム名）
 ```
 <input type="text" name="title" value="{{ old('title') }}" required>
