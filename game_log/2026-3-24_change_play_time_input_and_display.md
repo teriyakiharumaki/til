@@ -163,3 +163,88 @@ SQL生成
   ↓
 DBに送る
 ```
+
+## indexにプレイ時間の表示を追加
+
+```
+@if($game->play_time_minutes)
+  @php
+    $h = intdiv($game->play_time_minutes, 60);
+    $m = $game->play_time_minutes % 60;
+  @endphp
+  
+  @if($h > 0)
+    {{ $h }}時間
+  @endif
+
+  @if($m > 0)
+    {{ $m }}分
+  @endif
+@endif
+```
+
+**分で保存されたプレイ時間を、時間＋分に変換して表示**
+
+```
+@if($game->play_time_minutes)
+```
+プレイ時間があるときだけ表示
+
+```
+@php
+  $h = intdiv($game->play_time_minutes, 60);
+  $m = $game->play_time_minutes % 60;
+@endphp
+```
+
+計算する部分
+
+```
+$h = intdiv(150, 60); // 2
+```
+
+intdiv()：整数の割り算（小数切り捨て）
+
+(https://www.php.net/manual/ja/function.intdiv.php)
+
+```
+$m = 150 % 60; // 30
+```
+余りを求める
+
+```
+@if($h > 0)
+  {{ $h }}時間
+@endif
+
+@if($m > 0)
+  {{ $m }}分
+@endif
+```
+時間と分がある場合に表示する
+
+### Bradeの記法も整理
+
+- @if
+```
+@if(条件)
+  表示
+@endif
+```
+if文
+
+- @php
+```
+@php
+  PHPコード
+@endphp
+```
+
+Bladeの中でPHPを書くためのブロック
+
+- {{ }}
+```
+{{ $h }}
+```
+
+値を画面に出力
