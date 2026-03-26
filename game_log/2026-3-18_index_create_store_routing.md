@@ -84,7 +84,7 @@ useがあるからこのように書ける、ない場合
   `route('games.index')`と書ける
 
 
-- `Route::get('/games/create', [GameController::class, 'create'])->name('games.create');`, `Route::post('/games', [GameController::class, 'store'])->name('games.store');`
+### `Route::get('/games/create', [GameController::class, 'create'])->name('games.create');`, `Route::post('/games', [GameController::class, 'store'])->name('games.store');`
 
   上と同じ流れ
 
