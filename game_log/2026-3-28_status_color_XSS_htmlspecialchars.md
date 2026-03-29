@@ -10,7 +10,6 @@ game_log/resources/views/games/index.blade.php
 - {{ ['unplayed'=>'未プレイ','playing'=>'プレイ中','cleared'=>'クリア済み'][$game->status] ?? $game->status }}
 ```
 
-
 ## 変更後
 ```
 @if($game->status === 'unplayed')
@@ -60,3 +59,11 @@ $game->status === 'unplayed'
 <span>{{ $game->status }}</span>
 ```
 そのまま表示
+
+## 今更だけど、`{{}}`をなんで使うのか
+XSS対策のエスケープ対策を行うため、htmlspecialchars() 関数が使われる
+
+Laravelでは htmlspecialchars関数の代わりに、変数を波カッコで囲むだけ
+
+(https://biz.addisteria.com/laravel_escape/)<br>
+詳しい解説がある
