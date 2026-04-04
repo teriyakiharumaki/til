@@ -28,6 +28,9 @@ LaravelのEloquentが、**SQLの SUM() を使って合計値を取る**
 
 Eloquentは、**SQLをPHPっぽく書けるようにしたもの**
 
+Eloquentは、Laravelに備わっているORM（オブジェクトリレーショナルマッピング）という仕組みで、DB操作を簡単にしてくれるもの<br>
+（https://ma-vericks.com/blog/learning-laravel/）
+
 ### `return view('games.index', compact('games', 'totalMinutes'));`
 
 **Viewにデータを渡して画面を表示する部分**
@@ -78,7 +81,7 @@ game_log/resources/views/games/index.blade.php
 
 時間（hour）を出してる部分
 
-`intdiv()`について（）
+`intdiv()`について（https://www.php.net/manual/ja/function.intdiv.php）
 
 #### `$m = $totalMinutes % 60;`
 
