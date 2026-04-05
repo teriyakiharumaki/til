@@ -4,7 +4,7 @@
 
 - 一覧にプレイ状況の各ステータスの合計を表示させた
 
-## ①コントローラーに変数を渡し、件数を集計
+## ①コントローラーで件数を集計
 game_log/app/Http/Controllers/GameController.php
 
 ```
