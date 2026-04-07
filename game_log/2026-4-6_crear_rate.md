@@ -62,3 +62,79 @@ game_log/resources/views/games/index.blade.php
   🏆 クリア率：{{ $clearRate }}%
 </div>
 ```
+
+## ③クリア率の進捗バーを実装
+game_log/resources/views/games/index.blade.php
+```
+<div style="margin-bottom:15px;">
+  <div style="margin-bottom:6px;">
+    🏆 クリア率：{{ $clearRate }}%
+  </div>
+
+  <div style="width: 320px; max-width: 100%; background: #e5e7eb; border-radius: 9999px; overflow: hidden;">
+    <div style="width: {{ $clearRate }}%; background: #22c55e; padding: 6px 0;"></div>
+  </div>
+</div>
+```
+
+### 進捗バーの土台
+```
+<div style="width: 320px; max-width: 100%; background: #e5e7eb; border-radius: 9999px; overflow: hidden;">
+```
+
+- `width: 320px;`
+  
+  バー全体の横幅を 320px
+
+- `max-width: 100%;`
+
+  親要素より大きくなりすぎないようにする
+
+  (スマホ画面みたいに横幅が狭いときでも、はみ出さないようにするため) 
+
+  **普段は 320px、でも画面が小さければ、その画面幅に収まるように縮む**
+
+- `background: #e5e7eb;`
+
+  バーの土台の背景色
+
+- `border-radius: 9999px;`
+
+  角をめちゃくちゃ丸くしている
+
+  **9999px？**：十分大きい数を指定すると、左右が完全に丸まってカプセル型になる。
+
+  **普通の四角いバーではなく、丸っこい進捗バーにするため**
+
+- `overflow: hidden;`
+
+  内側の緑バーが外にはみ出したときに、外枠からはみ出さないようにする
+
+  これがないと、中の緑バーの角が、外側の丸みと合わずにはみ出して見えることがある
+
+  **外枠の丸みに合わせて、中身もきれいに切り取る**
+
+### バーの中身（進捗部分）
+
+```
+<div style="width: {{ $clearRate }}%; background: #22c55e; padding: 6px 0;"></div>
+```
+
+**実際に緑で埋まる部分**
+
+- `width: {{ $clearRate }}%;`
+
+  **`$clearRate` の値に応じて、バーの長さを変えている**
+
+  ```
+  $clearRate = 25 → width: 25%
+  $clearRate = 50 → width: 50%
+  $clearRate = 100 → width: 100%
+  ```
+
+- `background: #22c55e;`¥
+
+  **進捗部分の色を緑**
+
+  灰色 → 未達成部分<br>
+  緑色 → クリア済み部分
