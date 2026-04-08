@@ -138,3 +138,83 @@ game_log/resources/views/games/index.blade.php
 
   灰色 → 未達成部分<br>
   緑色 → クリア済み部分
+
+## クリア率に応じた称号の表示
+game_log/resources/views/games/index.blade.php
+
+```
+@php
+  if ($clearRate < 20) {
+    $title = '積みゲーマー';
+  } elseif ($clearRate < 60) {
+    $title = '冒険中ゲーマー';
+  } elseif ($clearRate < 90) {
+    $title = 'クリア職人';
+  } else {
+    $title = 'コンプリート勢';
+  }
+@endphp
+
+<div style="margin-top:8px; font-weight:bold; color:#f59e0b;">
+  称号：{{ $title }}
+</div>
+```
+
+### `@php部分`
+```
+@php
+  if ($clearRate < 20) {
+    $title = '積みゲーマー';
+  } elseif ($clearRate < 60) {
+    $title = '冒険中ゲーマー';
+  } elseif ($clearRate < 90) {
+    $title = 'クリア職人';
+  } else {
+    $title = 'コンプリート勢';
+  }
+@endphp
+```
+
+if文で条件分けをして、各条件ごとに変数`$title`に文字を代入
+
+### 称号の表示部分
+```
+<div style="margin-top:8px; font-weight:bold; color:#f59e0b;">
+  称号：{{ $title }}
+</div>
+```
+
+`{{}}`内で、称号が代入された変数`$title`の内容を表示
+
+## クリアしたゲームに背景色を追加
+game_log/resources/views/games/index.blade.php
+
+```
+ <ul>
+    @foreach ($games as $game)
+      <li>
+        <div style="
+            padding:10px;
+            margin-bottom:10px;
+            border:1px solid #ddd;
+            background: {{ $game->status === 'cleared' ? '#ecfdf5' : '#ffffff' }};
+        ">
+          <a href="{{ route('games.show', $game) }}">
+            {{ $game->title }}
+          </a>
+        </div>
+```
+
+### 背景色をつけている部分
+
+```
+background: {{ $game->status === 'cleared' ? '#ecfdf5' : '#ffffff' }};
+```
+
+- `$game->status === 'cleared'`
+
+  `===` は 完全一致を確認（型も値も一致するかを見る）
+
+- `'cleared' ? '#ecfdf5' : '#ffffff' }`
+
+  `条件 ? A : B`の形で三項演算子の形（条件がtrueならA、falseならB）
