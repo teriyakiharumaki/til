@@ -131,3 +131,77 @@ query() は何？：**これから検索条件を組み立てますよ**
 (https://qiita.com/fujita-goq/items/2279bb947ec4e7b103b2)<br>
 (https://zenn.dev/nshiro/articles/98d3826151af81)<br>
 (https://dexall.co.jp/articles/?p=2706)
+
+### `if (request()->filled('status'))`
+
+ここは、**URLに status が入っていたら**という意味
+
+- `request()`
+
+  今のリクエスト情報を取るためのもの
+
+  たとえばURLが
+  ```
+  /games?status=cleared
+  ```
+  なら、`request('status')`で `"cleared"` が取れる
+
+- `filled('status')`
+
+  その値が空じゃないかを確認してる
+
+  つまり
+  ```
+  request()->filled('status')
+  ```
+  は、status がちゃんと送られていて、中身も空じゃないなら true
+
+  例：URLが以下なら
+  ```
+  /games?status=playing
+
+  → true
+  ```
+
+  URLが以下なら
+  ```
+  /games
+
+  → false
+  ```
+
+###  `$query->where('status', request('status'));`
+
+これは、**status カラムが、送られてきた status と一致するものだけにする**という意味
+
+例：URLが
+```
+/games?status=cleared
+```
+なら、
+```
+$query->where('status', 'cleared');
+```
+と同じになる
+
+つまりSQLっぽく言うと：
+```
+WHERE status = 'cleared'
+```
+
+### `$games = $query->latest()->get();`
+
+ここで初めて 実際にデータを取っている。
+
+- latest()
+
+  **新しい順に並べる**という意味
+
+  だいたい created_at DESC と同じ。
+
+- get()
+
+  **検索結果を実際に取り出す**という意味
+
+  ここまではずっと「条件を作ってるだけ」だったけど、
+  get() がついた瞬間に、DBに問い合わせて結果が返ってくる
