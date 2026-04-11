@@ -191,13 +191,13 @@ WHERE status = 'cleared'
 
 ### `$games = $query->latest()->get();`
 
-ここで初めて 実際にデータを取っている。
+ここで初めて 実際にデータを取っている
 
 - latest()
 
   **新しい順に並べる**という意味
 
-  だいたい created_at DESC と同じ。
+  だいたい created_at DESC と同じ
 
 - get()
 
@@ -205,3 +205,5 @@ WHERE status = 'cleared'
 
   ここまではずっと「条件を作ってるだけ」だったけど、
   get() がついた瞬間に、DBに問い合わせて結果が返ってくる
+
+参考サイト（https://readouble.com/laravel/8.x/ja/queries.html）
