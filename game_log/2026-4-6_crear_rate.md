@@ -217,6 +217,10 @@ background: {{ $game->status === 'cleared' ? '#ecfdf5' : '#ffffff' }};
 
   `===` は 完全一致を確認（型も値も一致するかを見る）
 
+  参考サイト：(https://qiita.com/mzmz__02/items/4e902a13ffa6ac6addb4)
+
 - `'cleared' ? '#ecfdf5' : '#ffffff' }`
 
   `条件 ? A : B`の形で三項演算子の形（条件がtrueならA、falseならB）
+
+  参考サイト：（https://qiita.com/shonansurvivors/items/1e3194cf3eb2ea089039）
