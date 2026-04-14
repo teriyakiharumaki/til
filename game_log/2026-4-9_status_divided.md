@@ -197,7 +197,7 @@ WHERE status = 'cleared'
 
   **新しい順に並べる**という意味
 
-  だいたい created_at DESC と同じ
+  created_at DESC と同じ
 
 - get()
 
