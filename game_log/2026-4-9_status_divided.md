@@ -191,7 +191,7 @@ WHERE status = 'cleared'
 
 ### `$games = $query->latest()->get();`
 
-ここで初めて 実際にデータを取っている
+ここで実際にデータを取っている
 
 - latest()
 
