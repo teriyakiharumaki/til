@@ -84,3 +84,59 @@ Springが自動でsetName()を呼ぶ
 ↓
 ④ formの中に値が入る
 ```
+
+## nameの取得とセットって何が違う?
+
+- **「セット」は値を入れる**
+- **「取得」は値を取り出す**
+
+実際の流れは以下
+
+### ① 最初は空
+```
+private String name;
+```
+まだ値なし
+
+### ② ユーザー入力
+```
+teriyaki
+```
+をフォームに入力
+
+### ③ setName() が呼ばれる
+```
+setName("teriyaki")
+```
+
+### ④ 中で代入される
+```
+this.name = name;
+```
+
+結果
+```
+name = "teriyaki"
+```
+
+### ⑤ getName() で取得
+```
+form.getName()
+```
+
+### ⑥ 戻ってくる
+```
+"teriyaki"
+```
+
+### this.nameって何？
+
+```
+this.name = name;
+```
+
+this.name → クラスの中のname
+
+name → 引数で受け取った値
+
+つまり**受け取った値を、クラスのnameに保存する**
