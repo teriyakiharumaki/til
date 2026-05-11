@@ -96,7 +96,7 @@ Springが自動でsetName()を呼ぶ
 ```
 private String name;
 ```
-まだ値なし
+まだ値はない
 
 ### ② ユーザー入力
 ```
