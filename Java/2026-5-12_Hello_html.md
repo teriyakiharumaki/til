@@ -129,6 +129,10 @@ Controllerから渡されたmessageを表示
 ```
 model.addAttribute("message", "Hello, " + form.getName() + "!");
 ```
+>Modelは、ControllerからViewへ値を渡すための仕組みです。addAttributeメソッドを使って、Viewで使う変数を定義します。
+>参考サイト（https://zenn.dev/kasai/articles/3b09e04f44bc87）
+
+今回の場合は、message変数に`"Hello, " + form.getName() + "!"`を代入している
 
 #### HTML側
 ```
